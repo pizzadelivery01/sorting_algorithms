@@ -2,7 +2,7 @@
 
 /**
  * insertion_sort_list - sorting algorithm
- * @list pointer to list sorted
+ * @list: pointer to list sorted
  * return nothing
  */
 void insertion_sort_list(listint_t **list)
@@ -12,10 +12,10 @@ void insertion_sort_list(listint_t **list)
 	if (list == NULL)
 		return;
 	temp = *list;
-	for (temp = temp->next;temp;)
+	for (temp = temp->next; temp;)
 	{
 		hold = temp->next;
-		while ( temp->prev && temp->n < (temp->prev)->n)
+		while (temp->prev && temp->n < (temp->prev)->n)
 		{
 			prior = temp->prev;
 			prior->next = temp->next;
@@ -35,12 +35,12 @@ void insertion_sort_list(listint_t **list)
 /**
  * gethead - gets list head
  * @list: list that needs head
- *return listhead
+ * Return: listhead
  */
 
 listint_t *gethead(listint_t *list)
 {
 	while (list->prev)
 		list = list->prev;
-	return(list);
+	return (list);
 }
