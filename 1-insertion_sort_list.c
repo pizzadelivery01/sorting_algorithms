@@ -26,8 +26,21 @@ void insertion_sort_list(listint_t **list)
 				prior->next->prev = prior;
 			if (temp->prev)
 				temp->prev->next = temp;
-			print_list(*list);
+			print_list(gethead(*list));
 		}
 		temp = hold;
 	}
+	*list = gethead(*list);
+}
+/**
+ * gethead - gets list head
+ * @list: list that needs head
+ *return listhead
+ */
+
+listint_t *gethead(listint_t *list)
+{
+	while (list->prev)
+		list = list->prev;
+	return(list);
 }
